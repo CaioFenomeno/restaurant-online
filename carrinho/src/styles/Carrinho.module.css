@@ -1,0 +1,272 @@
+/**
+ * Estilos do componente Carrinho
+ * Design moderno com interatividade
+ */
+
+.carrinho {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 360px;
+  max-height: 80vh;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Header do carrinho */
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 20px;
+  border-radius: 12px 12px 0 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.header:hover {
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  flex: 1;
+}
+
+.resumo {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.quantidade {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.total {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Seção de detalhes */
+.detalhes {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: #f8f9fa;
+}
+
+.vazio {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: #718096;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Lista de itens */
+.lista {
+  list-style: none;
+  padding: 12px;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  transition: all 0.2s ease;
+}
+
+.item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transform: translateX(2px);
+}
+
+.itemInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.itemNome {
+  font-weight: 500;
+  color: #2d3748;
+  font-size: 14px;
+}
+
+.itemPreco {
+  font-size: 13px;
+  color: #667eea;
+  font-weight: 600;
+}
+
+.btnRemover {
+  background: #fed7d7;
+  color: #c53030;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnRemover:hover {
+  background: #fc8181;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Rodapé do carrinho */
+.rodape {
+  padding: 16px 12px;
+  border-top: 2px solid #e2e8f0;
+  background: white;
+  border-radius: 0 0 12px 12px;
+}
+
+.totalWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #f0f4ff;
+  border-radius: 8px;
+}
+
+.labelTotal {
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 14px;
+}
+
+.valorTotal {
+  font-size: 20px;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.acoes {
+  display: flex;
+  gap: 8px;
+}
+
+.btnContinuar,
+.btnFinalizar {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btnContinuar {
+  background: #e2e8f0;
+  color: #2d3748;
+}
+
+.btnContinuar:hover {
+  background: #cbd5e0;
+}
+
+.btnFinalizar {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+}
+
+.btnFinalizar:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+}
+
+/* Responsivo para tablet */
+@media (max-width: 768px) {
+  .carrinho {
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 12px 12px 0 0;
+    max-height: 50vh;
+  }
+}
+
+/* Responsivo para mobile */
+@media (max-width: 480px) {
+  .carrinho {
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 16px 16px 0 0;
+    max-height: 60vh;
+  }
+
+  .titulo {
+    font-size: 18px;
+  }
+
+  .item {
+    padding: 10px;
+    margin-bottom: 6px;
+  }
+
+  .itemNome {
+    font-size: 13px;
+  }
+
+  .btnContinuar,
+  .btnFinalizar {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+}

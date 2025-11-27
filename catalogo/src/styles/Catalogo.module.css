@@ -1,0 +1,216 @@
+/**
+ * Estilos do componente Catálogo
+ * Design moderno e responsivo com layout em grid
+ */
+
+.catalogo {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.titulo {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.subtitulo {
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Grid responsivo */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* Card do produto */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(102, 126, 234, 0.15);
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+/* Ícone do produto */
+.icon {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+/* Conteúdo do card */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.nomeProduto {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.descricao {
+  font-size: 14px;
+  color: #718096;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+  flex: 1;
+}
+
+/* Footer do card com preço e botão */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.preco {
+  font-size: 20px;
+  font-weight: 700;
+  color: #667eea;
+  white-space: nowrap;
+}
+
+/* Botão de adicionar */
+.botao {
+  flex: 1;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.botao:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.botao:active {
+  transform: scale(0.98);
+}
+
+/* Estado adicionado */
+.adicionado .botao {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+}
+
+/* Responsivo para tablets */
+@media (max-width: 768px) {
+  .catalogo {
+    padding: 24px 16px;
+  }
+
+  .titulo {
+    font-size: 24px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
+
+/* Responsivo para mobile */
+@media (max-width: 480px) {
+  .catalogo {
+    padding: 16px 12px;
+    border-radius: 12px;
+  }
+
+  .titulo {
+    font-size: 20px;
+  }
+
+  .subtitulo {
+    font-size: 14px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .nomeProduto {
+    font-size: 16px;
+  }
+
+  .descricao {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .footer {
+    gap: 8px;
+    padding-top: 12px;
+  }
+
+  .icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+}
