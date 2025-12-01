@@ -1,7 +1,11 @@
-/**
- * Página do micro-frontend Carrinho
- * Exporta o componente Carrinho para o container
- */
-import Carrinho from '../src/components/Carrinho';
+"use client";
 
-export default Carrinho;
+import dynamic from "next/dynamic";
+
+const Carrinho = dynamic(() => import("../src/components/Carrinho"), {
+  ssr: false,
+});
+
+export default function CarrinhoPage() {
+  return <Carrinho />;
+}

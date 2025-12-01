@@ -1,7 +1,11 @@
-/**
- * Página do micro-frontend Catálogo
- * Exporta o componente Catalogo para o container
- */
-import Catalogo from '../src/components/Catalogo';
+"use client";
 
-export default Catalogo;
+import dynamic from "next/dynamic";
+
+const Catalogo = dynamic(() => import("../src/components/Catalogo"), {
+  ssr: false,
+});
+
+export default function CatalogoPage() {
+  return <Catalogo />;
+}
